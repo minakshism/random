@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+		<VBox class="sapUiSmallMargin">
+		<f:SimpleForm id="idCat"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="{i18n>CATDETAIL}"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" >
+			<f:content>
+				<Label text="{i18n>CATID}" />
+				<Text text="{LocalDataModel>/ProductInfo/CategoryID}" />
+			</f:content>
+		</f:SimpleForm>
+	</VBox>
+</core:FragmentDefinition>

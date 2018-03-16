@@ -1,0 +1,125 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "nl",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		},
+		"dataSources": {
+			"mainService": {
+				"uri": "/Northwind/V2/(S(frmvpnbbbflpalhwnjlwe0ek))/OData/OData.svc",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "nl.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "nl.i18n.i18n"
+				}
+			}
+		},
+		"routing" : {
+			"config" : {
+				"routerClass" : "sap.m.routing.Router",
+				"viewPath":"nl/view",
+				"controlAggregation" : "pages",
+				"controlId" : "idAppCntrl",
+				"viewType" : "XML"
+			},
+			"routes" : [
+				{
+					"name" : "page1",
+					"pattern" : "",
+					"target" : "page1"
+				},
+				{
+					"name" : "page2",
+					"pattern" : "page2",
+					"target" : "page2"
+				},
+				{
+					"name" : "page3",
+					"pattern" : "page3/{proId}",
+					"target" : "page3"
+				}
+			],
+			"targets" : {
+				"page1" : {
+					"viewName" : "Home",
+					"viewLebel" : 0
+				},
+				"page2" : {
+					"viewName" : "Detail",
+					"viewLebel" : 1
+				},
+				"page3" : {
+					"viewName" : "UpdateView",
+					"viewLebel" : 2
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}

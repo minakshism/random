@@ -1,0 +1,31 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nl.controller.Home"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+
+		<Page title="Title" class="sapUiContentPadding">
+			<content>
+				<List
+				id="idList"
+				enableBusyIndicator="true"
+				headerText="Products"
+				selectionChange="OnSelectionChange"
+				growing="true"
+				growingThreshold="5"
+				items="{path:'/Products'}" >
+				<items>
+					<CustomListItem>
+						<HBox justifyContent="SpaceBetween" class="sapUiSmallMarginTopBottom sapUiMediumMarginBeginEnd">
+							<Text text="{Name}"/>
+							<Text text="{ID}"/>	
+							<HBox>
+							<core:Icon class="editBtn sapUiSmallMarginEnd" size="1.5rem"  press="OnSelectionChange" src="sap-icon://edit-outside" />
+							<core:Icon class="deleteBtn" size="1.5rem"  press="handleDelete" src="sap-icon://delete" />
+							</HBox>
+						</HBox>
+					</CustomListItem>
+				</items>
+				</List>
+				<!--<Button class="sapUiMediumMarginTopBottom" id="idDeleteBtn" press="handleMultiDelete" text="Delete"/>-->
+				<Button class="sapUiMediumMarginTopBottom" id="idCreateForm" press="handleCreateFormBtn" text="Create a List"/>
+			</content>
+		</Page>
+</mvc:View>

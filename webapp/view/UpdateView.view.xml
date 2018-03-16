@@ -1,0 +1,55 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nl.controller.UpdateView"
+	xmlns:f="sap.ui.layout.form" xmlns:html="http://www.w3.org/1999/xhtml">
+
+			<Page title="Title" navButtonPress="onBack" showNavButton="true">
+				<content>
+					<VBox>
+						<f:SimpleForm id="idDetail"
+							editable="true"
+							layout="ResponsiveGridLayout"
+							title="Update Product List"
+							labelSpanXL="3"
+							labelSpanL="3"
+							labelSpanM="3"
+							labelSpanS="12"
+							adjustLabelSpan="false"
+							emptySpanXL="4"
+							emptySpanL="4"
+							emptySpanM="4"
+							emptySpanS="0"
+							columnsXL="1"
+							columnsL="1"
+							columnsM="1"
+							singleContainerFullSize="false" width="100%" >
+						
+							<f:content class="sapUiTinyMarginTop">
+								
+									<Label text="Id" />
+									<Input  id="sId"  value="{LocalDataModel>/ProductInfo/ID}"/>
+									<Label text="Name" />
+									<Input id="idname" value="{LocalDataModel>/ProductInfo/Name}"/>
+									
+									<Label text="Description" />
+									<Input id="idDescription" value="{LocalDataModel>/ProductInfo/Description}"/>
+									
+									<Label  text="ReleaseDate" />
+									<DateTimePicker  id="idDate" 
+									value="{LocalDataModel>/ProductInfo/ReleaseDate}"/>
+									
+									<Label text="DiscontinuedDate" />
+									<DateTimePicker id="idDiscontinue" 
+									value="{LocalDataModel>/ProductInfo/DiscontinuedDate}"/>
+									
+									<Label text="Rating" />
+									<Input id="idRating" value="{LocalDataModel>/ProductInfo/Rating}"/>
+									
+									<Label text="Price" />
+									<Input id="idPrice" value="{LocalDataModel>/ProductInfo/Price}"/>
+									<Button text="Update List"	press="fnUpdateList"/>
+							</f:content>
+						</f:SimpleForm>
+					</VBox>
+				</content>
+			</Page>
+
+</mvc:View>
