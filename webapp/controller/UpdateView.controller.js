@@ -1,3 +1,4 @@
+/*eslint linebreak-style: ["error", "windows"]*/
 sap.ui.define([
 	"nl/controller/BaseController"
 ], function(BaseController) {
@@ -37,10 +38,10 @@ sap.ui.define([
 					groupId:"idEditBatch",
 					changeSetId:"idEditBatch",//****
 					success: jQuery.proxy(function(oResponse){
-						console.log("Success");	
+						
 					}, this),
 					error: jQuery.proxy(function(oResponse){
-						console.log("error");
+					
 					}, this)
 				});
 				

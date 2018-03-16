@@ -1,3 +1,4 @@
+/*eslint linebreak-style: ["error", "windows"]*/
 sap.ui.define([
 	"nl/controller/BaseController"
 ], function(BaseController) {

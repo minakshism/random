@@ -1,3 +1,4 @@
+/*eslint linebreak-style: ["error", "windows"]*/
 sap.ui.define([
 	"nl/controller/BaseController"
 ], function(BaseController) {
@@ -42,14 +43,14 @@ sap.ui.define([
 		//	}
 		
 		OnSelectionChange : function(oEvent){
-			console.log(oEvent);
+		
 			// var obj = oEvent.getSource().getModel().getProperty(oEvent.getSource().getSelectedContexts()[0].sPath);
 			// this.getOwnerComponent().getModel("LocalDataModel").setProperty("/ProductInfo", obj);
 			// this.showDetail(obj)
 			
 			var obj = oEvent.getSource().getParent().getModel().getProperty(oEvent.getSource().getParent().getBindingContext().sPath);
 			this.getOwnerComponent().getModel("LocalDataModel").setProperty("/ProductInfo", obj);
-			this.showDetail(obj)
+			this.showDetail(obj);
 		},
 		showDetail: function(oItem) {
 			this.getOwnerComponent().getRouter().navTo("page3", {
@@ -80,11 +81,11 @@ sap.ui.define([
 			var oList = this.getView().byId("idList");
 			var oSelectedItems = oList.getSelectedItems();
 			var olen = oSelectedItems.length;
-			console.log(olen);
+		
 			
 			for(var i=0; i<olen; i++){
 				var oPath = oSelectedItems[i].getBindingContext().getPath();
-				console.log(oPath);
+				
 				oList.getModel().remove(oPath);	
 			}
 		}
