@@ -5,9 +5,7 @@ sap.ui.define([
 	"use strict";
 
 	return Controller.extend("nl.controller.BaseController", {
-		// onInit : function(){
-		
-		// },
+	
 		
 		onBack : function(){
 			var sPreviousHash = History.getInstance().getPreviousHash();
